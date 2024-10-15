@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض Grid ديناميكي</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="controls">
+        <label for="columns">عدد الأعمدة:</label>
+        <input type="number" id="columns" value="3" min="1" max="10">
+        <br>
+        <label for="rows">عدد الصفوف:</label>
+        <input type="number" id="rows" value="2" min="1" max="10">
+<br>
+        <label for="justify-items">محاذاة العناصر أفقياً:</label>
+        <select id="justify-items">
+            <option value="start">start</option>
+            <option value="center">center</option>
+            <option value="end">end</option>
+            <option value="stretch" selected>stretch</option>
+        </select>
+<br>
+        <label for="align-items">محاذاة العناصر عمودياً:</label>
+        <select id="align-items">
+            <option value="start">start</option>
+            <option value="center">center</option>
+            <option value="end">end</option>
+            <option value="stretch" selected>stretch</option>
+        </select>
+<br>
+        <label for="gap">الفجوة بين العناصر:</label>
+        <input type="range" id="gap" min="0" max="50" value="10">
+    </div>
+
+    <div class="grid-container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+
+    <pre class="code-output"></pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

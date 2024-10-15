@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Landing</title>
+    <style>
+        body {
+	background-color: #131313;
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-variation-settings: "slnt" 0;
+}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-content {
+            max-width: 700px;
+            color: white;
+        }
+        .announcement {
+        margin-top: 10rem;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 16px;
+            color: white;
+            border: 1px solid rgba(202, 202, 202, 0.6);
+            background-color: transparent;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .announcement:hover {
+            background-color: #E730CA;
+            border-color: transparent;
+        }
+        .announcement a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+        }
+        .announcement svg {
+            width: 20px;
+            height: 20px;
+        }
+        .heading {
+            
+            font-size: 48px;
+            line-height: 1.2;
+            color: white;
+        }
+        .heading span {
+            color: #FF33DE;
+        }
+        .description {
+            margin-top: 24px;
+            font-size: 18px;
+            line-height: 1.5;
+            max-width: 550px;
+            color: white;
+        }
+        .buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 16px;
+        }
+        .button-primary {
+            padding: 10px 20px;
+            background-color: #E730CA;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .button-primary:hover {
+            background-color: transparent;
+            border-color: #E730CA;
+        }
+        .button-secondary {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 1px solid #E730CA;
+            border-radius: 12px;
+            color: #E730CA;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .button-secondary:hover {
+            background-color: rgba(231, 48, 202, 0.3);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="announcement">
+                    <a href="#">
+                        New update is coming
+                        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+                <h1 class="heading">
+Take your sites from ordinary to  <span>art !</span></h1>
+                <p class="description">in this website, I will provide you with helpful tricks to transform your websites into modern and lively creations !!<br>
+      This website isn't for beginners, you need to learn basic HTML and CSS first.</p>
+                <div class="buttons">
+                    <a href="#" class="button-primary">Find NFT</a>
+                    <a href="#" class="button-secondary">Create NFT</a>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

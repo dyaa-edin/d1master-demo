@@ -1,0 +1,168 @@
+body {
+  width: 95%;
+  height: 100;
+  margin: 0 auto;
+  background-color: #2d2d2d;
+}
+
+.text {
+  text-align: center;
+  color: #f3f3f3;
+  font-family: "Share Tech Mono", monospace;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.demo-wrap {
+  background-color: #4e4e4f;
+  height: 375px;
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid #f3f3f3;
+  border-radius: 5px;
+  display: flex;
+}
+
+.box {
+  background-color: #3c78b7;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px 10px;
+  display: flex;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.box p {
+  font-size: 0.8em;
+}
+
+.one {
+  background-color: #4379F2;
+}
+
+.two {
+  background-color: #FFEB00;
+}
+
+.three {
+  background-color: #6EC207;
+}
+
+.four {
+  background-color: #117554;
+}
+
+.property-container {
+  display: flex;
+  justify-content: center;
+}
+
+.property-container h3, .property-container p{
+  color: #fff;
+}
+
+.property-box {
+  width: 32%;
+  padding: 5px;
+}
+.property-box h3 {
+  font-size: 1.2em;
+  background-color: #3c78b7;
+  padding: 5px 0;
+  border-radius: 5px;
+  margin-top: 0;
+  font-size: 1em;
+}
+.property-box p {
+  background-color: #4e4e4f;
+  padding: 3px;
+  margin: 5px auto;
+  width: 90%;
+  border-radius: 5px;
+}
+.property-box p:hover {
+  background-color: #676769;
+}
+.property-box .selected {
+  border: 2px solid #3c78b7;
+}
+
+.fd-row {
+  flex-direction: row;
+}
+
+.fd-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.fd-column {
+  flex-direction: column;
+}
+
+.fd-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.jc-flex-start {
+  justify-content: flex-start;
+}
+
+.jc-flex-end {
+  justify-content: flex-end;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-space-between {
+  justify-content: space-between;
+}
+
+.jc-space-around {
+  justify-content: space-around;
+}
+
+.ai-flex-start {
+  align-items: flex-start;
+}
+
+.ai-flex-end {
+  align-items: flex-end;
+}
+
+.ai-stretch {
+  align-items: stretch;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.property-info p {
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+}
+.property-info h3 {
+  color: #3c78b7;
+  font-size: 1.2em;
+  text-align: left;
+}
+.property-info p{
+  color: #fff;
+}
+
+.mdn-link a {
+  text-decoration: none;
+  background-color: #3c78b7;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+.mdn-link a:hover {
+  background-color: #5c92ca;
+}

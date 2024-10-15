@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Effect Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css">
+    <style>
+      *{
+        font-size: 2rem;
+        }
+        
+    </style>
+</head>
+<body>
+
+<!-- أزرار لتشغيل المؤثرات الصوتية -->
+<button class="soundButton" data-sound="soundEffect1">صوت 1</button>
+<button class="soundButton" data-sound="soundEffect2">صوت 2</button>
+<button class="soundButton" data-sound="soundEffect3">صوت 3</button>
+<!-- زر لتعطيل/تفعيل جميع المؤثرات الصوتية -->
+<button id="toggleAllSounds">
+    <i class='bx bx-volume-full' id="soundIcon"></i>
+</button>
+
+<!-- إضافة مؤثرات صوتية -->
+<audio id="soundEffect1" src="click.mp3"></audio>
+<audio id="soundEffect2" src="click2.mp3"></audio>
+<audio id="soundEffect3" src="win.mp3"></audio>
+<audio id="toggleSound" src="sound1.mp3"></audio>
+
+<script>
+// الحصول على العناصر
+const toggleButton = document.getElementById('toggleAllSounds');
+const soundIcon = document.getElementById('soundIcon');
+const soundEffects = {
+    soundEffect1: document.getElementById('soundEffect1'),
+    soundEffect2: document.getElementById('soundEffect2'),
+    soundEffect3: document.getElementById('soundEffect3'),
+};
+const toggleSound = document.getElementById('toggleSound');
+
+// استرجاع حالة المؤثرات من localStorage
+let areSoundsDisabled = localStorage.getItem('areSoundsDisabled') === 'true';
+
+// تحديث الأيقونة عند تحميل الصفحة
+if (areSoundsDisabled) {
+    soundIcon.classList.remove('bx-volume-full');
+    soundIcon.classList.add('bx-volume-mute');
+}
+
+// إضافة حدث عند النقر على زر تعطيل/تفعيل المؤثرات الصوتية
+toggleButton.addEventListener('click', () => {
+    areSoundsDisabled = !areSoundsDisabled; // عكس الحالة
+
+    // تغيير الأيقونة حسب الحالة
+    soundIcon.classList.toggle('bx-volume-full', !areSoundsDisabled);
+    soundIcon.classList.toggle('bx-volume-mute', areSoundsDisabled);
+
+    // تشغيل المؤثر الصوتي المناسب
+    toggleSound.currentTime = 0; // إعادة الصوت إلى البداية
+    toggleSound.play(); // تشغيل الصوت بدون تأخير
+
+    // تخزين الحالة في localStorage
+    localStorage.setItem('areSoundsDisabled', areSoundsDisabled);
+});
+
+// الحصول على جميع الأزرار التي تحمل class "soundButton"
+const soundButtons = document.querySelectorAll('.soundButton');
+
+// إضافة حدث لكل زر لتشغيل الصوت
+soundButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const soundId = button.getAttribute('data-sound'); // الحصول على اسم الصوت من خاصية البيانات
+        if (!areSoundsDisabled) {
+            soundEffects[soundId].play(); // تشغيل الصوت المحدد
+        }
+    });
+});
+
+// الاستماع لجميع أصوات المؤثرات عند الضغط عليها
+Object.values(soundEffects).forEach(sound => {
+    sound.addEventListener('play', () => {
+        if (areSoundsDisabled) {
+            sound.pause(); // إيقاف الصوت إذا كانت المؤثرات معطلة
+            sound.currentTime = 0; // إعادة الصوت إلى البداية
+        }
+    });
+});
+</script>
+
+</body>
+</html>

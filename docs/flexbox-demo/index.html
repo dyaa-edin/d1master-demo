@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Demo</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300|Share+Tech+Mono" rel="stylesheet">
+  <style>
+    body {
+      width: 95%;
+      margin: 0 auto;
+      background-color: #1d1d1d;
+      font-family: "Roboto", sans-serif;
+      color: #f3f3f3;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: "Share Tech Mono", monospace;
+      color: #fff;
+    }
+    .text {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+    }
+    .demo-wrap {
+      background-color: #333;
+      height: 420px;
+      width: 80%;
+      margin: 20px auto;
+      border: 2px solid #555;
+      border-radius: 10px;
+      display: flex;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    .box__v2 {
+      background-color: #3c78b7;
+      border-radius: 10px;
+      color: #000;
+      margin: 5px;
+      padding: 0 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.1em;
+      font-family: "Share Tech Mono", monospace;
+      transition: transform 0.3s ease;
+    }
+    .box__v2:hover {
+      transform: scale(1.1);
+    }
+    .one { background-color: #4379F2; }
+    .two { background-color: #FFEB00; }
+    .three { background-color: #6EC207; }
+    .four { background-color: #117554; }
+
+    .select-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .select-box {
+      width: 30%;
+      margin: 10px;
+      background-color: #2a2a2a;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .select-box select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #444;
+      color: #fff;
+      font-size: 1.1em;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .demo-wrap {
+        flex-direction: column;
+        min-height: 400px;
+      }
+      .box__v2 {
+        width: 30px;
+        margin: 10px 0;
+      }
+      .select-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Flexbox 💪 📦 Demo</h1>
+  <p class="text">Set container element to display: flex;</p>
+
+  <h2>Flex Container Properties</h2>
+  <p class="text">Toggle flex container properties using the dropdowns below</p>
+
+  <div class="select-container">
+    <div class="select-box">
+      <h3>flex-direction_all_in_one</h3>
+      <select id="flex-direction_all_in_one">
+        <option value="row">row</option>
+        <option value="row-reverse">row-reverse</option>
+        <option value="column">column</option>
+        <option value="column-reverse">column-reverse</option>
+      </select>
+    </div>
+
+    <div class="select-box">
+      <h3>justify-content_all_in_one</h3>
+      <select id="justify-content_all_in_one">
+        <option value="flex-start">flex-start</option>
+        <option value="flex-end">flex-end</option>
+        <option value="center">center</option>
+        <option value="space-between">space-between</option>
+        <option value="space-around">space-around</option>
+      </select>
+    </div>
+
+    <div class="select-box">
+      <h3>align-items_all_in_one</h3>
+      <select id="align-items_all_in_one">
+        <option value="flex-start">flex-start</option>
+        <option value="flex-end">flex-end</option>
+        <option value="center">center</option>
+        <option value="stretch">stretch</option>
+      </select>
+    </div>
+  </div>
+  <div class="demo-wrap ai-flex-start">
+    <div class="box__v2 one"><p>1</p></div>
+    <div class="box__v2 two"><p>2</p></div>
+    <div class="box__v2 three"><p>3</p></div>
+    <div class="box__v2 four"><p>4</p></div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Apply the initial values to the flexbox container
+      function applyFlexboxSettings() {
+        const flexDirection = $('#flex-direction_all_in_one').val();
+        const justifyContent = $('#justify-content_all_in_one').val();
+        const alignItems = $('#align-items_all_in_one').val();
+
+        $('.demo-wrap').css({
+          'flex-direction': flexDirection,
+          'justify-content': justifyContent,
+          'align-items': alignItems
+        });
+      }
+
+      // Listen for changes in the dropdowns and apply changes
+      $('select').on('change', function() {
+        applyFlexboxSettings();
+      });
+
+      // Apply initial settings on load
+      applyFlexboxSettings();
+    });
+  </script>
+</body>
+</html>

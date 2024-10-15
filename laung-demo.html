@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع متعدد اللغات</title>
+</head>
+<body>
+    <h1 data-i18n="greeting">Hello</h1>
+    <p data-i18n="about">This is a multilingual website example.</p>
+    <button data-i18n="contact">Contact Us</button>
+
+    <!-- اختيار اللغة -->
+    <div id="languageSwitcher">
+        <label for="language">Select Language:</label>
+        <select id="language">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+        </select>
+    </div>
+
+    <script src="https://unpkg.com/i18next@21.6.4/i18next.min.js"></script>
+    <script>
+        // إعداد الترجمة
+        i18next.init({
+            lng: 'en', // اللغة الافتراضية
+            resources: {
+                en: {
+                    translation: {
+                        "greeting": "Hello",
+                        "about": "This is a multilingual website example.",
+                        "contact": "Contact Us"
+                    }
+                },
+                ar: {
+                    translation: {
+                        "greeting": "مرحبا",
+                        "about": "هذا مثال على موقع متعدد اللغات.",
+                        "contact": "اتصل بنا"
+                    }
+                }
+            }
+        }, function(err, t) {
+            // تطبيق الترجمة عند التحميل
+            updateContent();
+        });
+
+        // دالة لتحديث المحتوى
+        function updateContent() {
+            document.querySelectorAll('[data-i18n]').forEach(function(element) {
+                const key = element.getAttribute('data-i18n');
+                element.textContent = i18next.t(key);
+            });
+        }
+
+        // تغيير اللغة
+        document.getElementById("language").addEventListener("change", function() {
+            const selectedLang = this.value;
+            i18next.changeLanguage(selectedLang, updateContent);
+        });
+    </script>
+</body>
+</html>

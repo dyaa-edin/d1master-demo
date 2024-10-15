@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محرك البحث باستخدام Fuse.js</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        #searchResults p {
+            margin: 5px 0;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+        }
+        button {
+            padding: 10px;
+        }
+        /* تنسيق القائمة المنسدلة */
+        #autocompleteList {
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            max-height: 200px;
+            overflow-y: auto;
+            width: 300px;
+            margin-top: 5px;
+        }
+        #autocompleteList p {
+            padding: 10px;
+            cursor: pointer;
+        }
+        #autocompleteList p:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>محرك البحث باستخدام Fuse.js</h1>
+    <input type="text" id="searchQuery" placeholder="أدخل كلمة للبحث..." oninput="performSearch()">
+    <div id="autocompleteList"></div>
+    <div id="searchResults"></div>
+
+    <!-- تضمين مكتبة Fuse.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.5.3/fuse.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

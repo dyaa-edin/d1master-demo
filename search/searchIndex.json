@@ -1,0 +1,12 @@
+[
+    {
+        "title": "صفحة البرمجة",
+        "url": "/pages/page1.html",
+        "keywords": ["برمجة", "تعلم", "تطوير الويب", "html", "css"]
+    },
+    {
+        "title": "صفحة الرسم",
+        "url": "/pages/page2.html",
+        "keywords": ["رسم", "فن", "إبداع"]
+    }
+]
