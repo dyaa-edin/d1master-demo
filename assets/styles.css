@@ -1099,9 +1099,11 @@ mark {
   }
   .read__more__blog{
     color: var(--body-text-color);
+    border: 1px solid red;
     padding:0.2rem 0.8rem;
     border-radius: 2rem;
     background-color: var(--apple-buton);
+    z-index: 4;
   }
           pre {
             background-color: #131313;
